@@ -1,5 +1,14 @@
 <h1>{{ nombre() }} prende la laptop!</h1>
 
-<button (click)="mensaje()">Nuevo nombre</button>
+<label for="nuevo-nombre">Nuevo nombre</label>
+<input
+  id="nuevo-nombre"
+  type="text"
+  #campo
+  (keydown.enter)="cambiarNombre(campo.value); campo.value = ''"
+/>
+<button type="button" (click)="cambiarNombre(campo.value); campo.value = ''">
+  Cambiar nombre
+</button>
 
 <router-outlet />

@@ -10,8 +10,8 @@ import { RouterOutlet } from '@angular/router';
 export class App {
   protected readonly nombre = signal('Otorbi');
 
-  protected mensaje() {
-    const nuevoNombre = prompt('Dime nombre...')?.trim();
+  protected cambiarNombre(valor: string) {
+    const nuevoNombre = valor.trim();
     if (nuevoNombre) {
       this.nombre.set(nuevoNombre);
     }
