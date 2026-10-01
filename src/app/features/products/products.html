@@ -1,0 +1,10 @@
+<article class="producto">
+  <div class="producto__marco">
+    <img class="producto__imagen" [ngSrc]="producto.image" [alt]="producto.title" fill priority />
+  </div>
+  <h2>Producto {{ producto.id }}</h2>
+  <h3>{{ producto.title }}</h3>
+  <p>Categoría: {{ producto.category }}</p>
+  <p>Precio: {{ producto.price }} €</p>
+  <p>Valoración: {{ producto.rating.rate }} ({{ producto.rating.count }} opiniones)</p>
+</article>

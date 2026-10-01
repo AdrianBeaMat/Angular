@@ -1,0 +1,13 @@
+.producto {
+  max-width: 24rem;
+}
+
+.producto__marco {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.producto__imagen {
+  object-fit: contain;
+}
