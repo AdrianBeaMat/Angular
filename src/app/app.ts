@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,10 +8,12 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
 })
 export class App {
-  nombre: string = "Otorbi";
+  protected readonly nombre = signal('Otorbi');
 
-  mensaje() {
-    let nuevoNombre: string | null = prompt("Dime nombre...");
-    alert(nuevoNombre);
+  protected mensaje() {
+    const nuevoNombre = prompt('Dime nombre...')?.trim();
+    if (nuevoNombre) {
+      this.nombre.set(nuevoNombre);
+    }
   }
 }
