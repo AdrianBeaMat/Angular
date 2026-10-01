@@ -1,10 +1,24 @@
-<article class="producto">
-  <div class="producto__marco">
-    <img class="producto__imagen" [ngSrc]="producto.image" [alt]="producto.title" fill priority />
+<article class="card">
+  <div class="card__media">
+    <span class="card__category">{{ producto.category }}</span>
+    <img class="card__image" [ngSrc]="producto.image" [alt]="producto.title" fill priority />
   </div>
-  <h2>Producto {{ producto.id }}</h2>
-  <h3>{{ producto.title }}</h3>
-  <p>Categoría: {{ producto.category }}</p>
-  <p>Precio: {{ producto.price }} €</p>
-  <p>Valoración: {{ producto.rating.rate }} ({{ producto.rating.count }} opiniones)</p>
+
+  <div class="card__body">
+    <h2 class="card__id">Producto {{ producto.id }}</h2>
+    <h3 class="card__title">{{ producto.title }}</h3>
+
+    <div class="card__rating">
+      <span class="card__stars" aria-hidden="true" [style.--rate]="producto.rating.rate">★★★★★</span>
+      <span class="card__rate">Valoración: {{ producto.rating.rate }}</span>
+      <span class="card__count">({{ producto.rating.count }} opiniones)</span>
+    </div>
+
+    <p class="card__description">{{ producto.description }}</p>
+
+    <div class="card__footer">
+      <span class="card__price-label">Precio</span>
+      <p class="card__price">{{ producto.price | number: '1.2-2' }} €</p>
+    </div>
+  </div>
 </article>

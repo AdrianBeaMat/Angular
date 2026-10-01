@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+import { DecimalPipe, NgOptimizedImage } from '@angular/common';
 import { PRODUCTS } from '../../core/mocks/products';
 import { Product } from '../../core/models/product';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgOptimizedImage],
+  imports: [DecimalPipe, NgOptimizedImage],
   selector: 'app-products',
   styleUrl: './products.css',
   templateUrl: './products.html',
